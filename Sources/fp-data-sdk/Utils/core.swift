@@ -269,7 +269,7 @@ public class FastpixMetrix {
         self.playerInitKey = [:]
     }
     
-    func configure(key: String,
+    public func configure(key: String,
                    passableMetadata: [String: Any],
                    fetchPlayheadTime: @escaping () -> Int,
                    fetchVideoState: @escaping () -> [String:Any]) {
@@ -279,7 +279,7 @@ public class FastpixMetrix {
     }
     
     /// **Dispatch an event to a specific player instance**
-    func dispatch(key: String, event: String, metadata: [String: Any]) {
+    public func dispatch(key: String, event: String, metadata: [String: Any]) {
         if let nucleusInstance = playerInitKey[key] {
             nucleusInstance.dispatchEvent(event: event, eventmetadata: metadata)
         }
